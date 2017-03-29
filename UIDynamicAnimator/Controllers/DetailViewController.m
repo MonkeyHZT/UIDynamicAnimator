@@ -8,6 +8,11 @@
 
 #import "DetailViewController.h"
 #import "BaseView.h"
+#import "SnapView.h"
+#import "PushView.h"
+#import "AttachmentView.h"
+#import "SpringView.h"
+#import "ColideView.h"
 
 @interface DetailViewController ()
 
@@ -20,29 +25,48 @@
 -(instancetype)initWithIntIndex:(NSInteger)intIndex{
     if(self = [super init]){
         self.intIndex = intIndex;
-        [self.view addSubview:self.viewAnimator];
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self.view addSubview:self.viewAnimator];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)initViewAnimator{
+    switch (self.intIndex) {
+        case 0:
+            _viewAnimator = [[SnapView alloc] init];
+            break;
+        case 1:
+            _viewAnimator = [[SnapView alloc] init];
+            break;
+        case 2:
+            _viewAnimator = [[SnapView alloc] init];
+            break;
+        case 3:
+            _viewAnimator = [[SnapView alloc] init];
+            break;
+        case 4:
+            _viewAnimator = [[SnapView alloc] init];
+            break;
+        case 5:
+            _viewAnimator = [[SnapView alloc] init];
+            break;
+            
+        default:
+            break;
+    }
+    _viewAnimator.frame = self.view.bounds;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - 懒加载
+-(BaseView *)viewAnimator{
+    if(!_viewAnimator){
+        [self initViewAnimator];
+    }
+    return _viewAnimator;
 }
-*/
 
 @end
