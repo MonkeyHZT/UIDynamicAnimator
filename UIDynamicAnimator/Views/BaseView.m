@@ -16,13 +16,13 @@
 -(instancetype)init{
     if(self = [super init]){
         self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background"]];
+        [self addSubview:self.viewBox];
         [self initAction];
     }
     return self;
 }
 
 - (void)initAction{
-    
 }
 
 
