@@ -17,6 +17,12 @@
 		35A2AB951E8B8A4000885E05 /* MainDemoListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A2AB941E8B8A4000885E05 /* MainDemoListDataSource.m */; };
 		35A2AB981E8B8A5500885E05 /* MainDemoListDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A2AB971E8B8A5500885E05 /* MainDemoListDelegate.m */; };
 		35A2AB9B1E8B969500885E05 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A2AB9A1E8B969500885E05 /* DetailViewController.m */; };
+		35A2AB9F1E8BA2B300885E05 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A2AB9E1E8BA2B300885E05 /* BaseView.m */; };
+		35A2ABA21E8BA87800885E05 /* SnapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A2ABA11E8BA87800885E05 /* SnapView.m */; };
+		35A2ABA51E8BA89700885E05 /* PushView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A2ABA41E8BA89700885E05 /* PushView.m */; };
+		35A2ABA81E8BA8A700885E05 /* AttachmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A2ABA71E8BA8A700885E05 /* AttachmentView.m */; };
+		35A2ABAB1E8BA8B100885E05 /* SpringView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A2ABAA1E8BA8B100885E05 /* SpringView.m */; };
+		35A2ABAE1E8BA8C200885E05 /* ColideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A2ABAD1E8BA8C200885E05 /* ColideView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +64,18 @@
 		35A2AB971E8B8A5500885E05 /* MainDemoListDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainDemoListDelegate.m; sourceTree = "<group>"; };
 		35A2AB991E8B969500885E05 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		35A2AB9A1E8B969500885E05 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		35A2AB9D1E8BA2B300885E05 /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
+		35A2AB9E1E8BA2B300885E05 /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
+		35A2ABA01E8BA87800885E05 /* SnapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapView.h; sourceTree = "<group>"; };
+		35A2ABA11E8BA87800885E05 /* SnapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnapView.m; sourceTree = "<group>"; };
+		35A2ABA31E8BA89700885E05 /* PushView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushView.h; sourceTree = "<group>"; };
+		35A2ABA41E8BA89700885E05 /* PushView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushView.m; sourceTree = "<group>"; };
+		35A2ABA61E8BA8A700885E05 /* AttachmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttachmentView.h; sourceTree = "<group>"; };
+		35A2ABA71E8BA8A700885E05 /* AttachmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttachmentView.m; sourceTree = "<group>"; };
+		35A2ABA91E8BA8B100885E05 /* SpringView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringView.h; sourceTree = "<group>"; };
+		35A2ABAA1E8BA8B100885E05 /* SpringView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringView.m; sourceTree = "<group>"; };
+		35A2ABAC1E8BA8C200885E05 /* ColideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColideView.h; sourceTree = "<group>"; };
+		35A2ABAD1E8BA8C200885E05 /* ColideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColideView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,10 +126,10 @@
 		35A2AB571E8B883F00885E05 /* UIDynamicAnimator */ = {
 			isa = PBXGroup;
 			children = (
+				35A2AB9C1E8B9DCF00885E05 /* Views */,
 				35A2AB8C1E8B88C300885E05 /* Controllers */,
 				35A2AB901E8B8A2E00885E05 /* DataSource */,
 				35A2AB911E8B8A2E00885E05 /* Delegate */,
-				35A2AB921E8B8A2E00885E05 /* Modal */,
 				35A2AB5B1E8B883F00885E05 /* AppDelegate.h */,
 				35A2AB5C1E8B883F00885E05 /* AppDelegate.m */,
 				35A2AB641E8B883F00885E05 /* Assets.xcassets */,
@@ -177,11 +195,23 @@
 			path = Delegate;
 			sourceTree = "<group>";
 		};
-		35A2AB921E8B8A2E00885E05 /* Modal */ = {
+		35A2AB9C1E8B9DCF00885E05 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				35A2AB9D1E8BA2B300885E05 /* BaseView.h */,
+				35A2AB9E1E8BA2B300885E05 /* BaseView.m */,
+				35A2ABA01E8BA87800885E05 /* SnapView.h */,
+				35A2ABA11E8BA87800885E05 /* SnapView.m */,
+				35A2ABA31E8BA89700885E05 /* PushView.h */,
+				35A2ABA41E8BA89700885E05 /* PushView.m */,
+				35A2ABA61E8BA8A700885E05 /* AttachmentView.h */,
+				35A2ABA71E8BA8A700885E05 /* AttachmentView.m */,
+				35A2ABA91E8BA8B100885E05 /* SpringView.h */,
+				35A2ABAA1E8BA8B100885E05 /* SpringView.m */,
+				35A2ABAC1E8BA8C200885E05 /* ColideView.h */,
+				35A2ABAD1E8BA8C200885E05 /* ColideView.m */,
 			);
-			path = Modal;
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,11 +347,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35A2ABA51E8BA89700885E05 /* PushView.m in Sources */,
 				35A2AB951E8B8A4000885E05 /* MainDemoListDataSource.m in Sources */,
 				35A2AB8F1E8B88D200885E05 /* MainDemoListController.m in Sources */,
+				35A2ABA21E8BA87800885E05 /* SnapView.m in Sources */,
+				35A2AB9F1E8BA2B300885E05 /* BaseView.m in Sources */,
+				35A2ABA81E8BA8A700885E05 /* AttachmentView.m in Sources */,
 				35A2AB5D1E8B883F00885E05 /* AppDelegate.m in Sources */,
+				35A2ABAB1E8BA8B100885E05 /* SpringView.m in Sources */,
 				35A2AB981E8B8A5500885E05 /* MainDemoListDelegate.m in Sources */,
 				35A2AB5A1E8B883F00885E05 /* main.m in Sources */,
+				35A2ABAE1E8BA8C200885E05 /* ColideView.m in Sources */,
 				35A2AB9B1E8B969500885E05 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,9 +7,11 @@
 //
 
 #import "DetailViewController.h"
+#import "BaseView.h"
 
 @interface DetailViewController ()
 
+@property(nonatomic,strong)BaseView *viewAnimator;
 
 @end
 
@@ -18,6 +20,7 @@
 -(instancetype)initWithIntIndex:(NSInteger)intIndex{
     if(self = [super init]){
         self.intIndex = intIndex;
+        [self.view addSubview:self.viewAnimator];
     }
     return self;
 }
