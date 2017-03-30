@@ -20,6 +20,9 @@
 - (void)initAction{
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
     [self addGestureRecognizer:tapGesture];
+    
+    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
+    [self addGestureRecognizer:panGesture];
 }
 
 - (void)tapAction:(UIGestureRecognizer *)tapGesture{
@@ -33,10 +36,11 @@
     }
     
 }
+
 - (void)resetSnapBehaviorWithPoint:(CGPoint)point{
-    [self.animator removeAllBehaviors];
+    [self.animator removeBehavior:self.snapBehavior];
     self.snapBehavior = [[UISnapBehavior alloc] initWithItem:self.viewBox snapToPoint:point];
-    self.snapBehavior.damping = 0.8;
+    self.snapBehavior.damping = 1;
     [self.animator addBehavior:self.snapBehavior];
 }
 

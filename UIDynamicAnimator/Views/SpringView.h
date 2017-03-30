@@ -6,8 +6,8 @@
 //  Copyright © 2017年 BlackMonkey. All rights reserved.
 //
 
-#import "BaseView.h"
+#import "AttachmentView.h"
 
-@interface SpringView : BaseView
+@interface SpringView : AttachmentView
 
 @end

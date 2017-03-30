@@ -10,12 +10,23 @@
 
 @implementation SpringView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+-(void)initAction{
+    [super initAction];
+    
+    self.attachmentBehavior.frequency = 0.5;  // 频率,hz
+    self.attachmentBehavior.damping = 0.5;   // 振幅
+    
+    [self.viewBox addObserver:self forKeyPath:@"center" options:NSKeyValueObservingOptionNew context:nil];
 }
-*/
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+    if(![keyPath isEqualToString:@"center"]){
+        return;
+    }
+    [self setNeedsDisplay];
+}
+-(void)dealloc{
+    [self.viewBox removeObserver:self forKeyPath:@"center"];
+}
 
 @end

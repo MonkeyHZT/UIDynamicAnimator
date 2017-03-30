@@ -14,7 +14,7 @@
 #import "SpringView.h"
 #import "ColideView.h"
 
-@interface DetailViewController ()
+@interface DetailViewController ()<UIGestureRecognizerDelegate>
 
 @property(nonatomic,strong)BaseView *viewAnimator;
 
@@ -31,34 +31,33 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.viewAnimator];
+    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
 }
 
 - (void)initViewAnimator{
+    CGRect frame = CGRectMake(0, 64, self.view.bounds.size.width, self.view.bounds.size.height - 64);
     switch (self.intIndex) {
         case 0:
-            _viewAnimator = [[SnapView alloc] init];
+            _viewAnimator = [[SnapView alloc] initWithFrame:frame];
             break;
         case 1:
-            _viewAnimator = [[SnapView alloc] init];
+            _viewAnimator = [[PushView alloc] initWithFrame:frame];
             break;
         case 2:
-            _viewAnimator = [[SnapView alloc] init];
+            _viewAnimator = [[AttachmentView alloc] initWithFrame:frame];
             break;
         case 3:
-            _viewAnimator = [[SnapView alloc] init];
+            _viewAnimator = [[SpringView alloc] initWithFrame:frame];
             break;
         case 4:
-            _viewAnimator = [[SnapView alloc] init];
-            break;
-        case 5:
-            _viewAnimator = [[SnapView alloc] init];
+            _viewAnimator = [[ColideView alloc] initWithFrame:frame];
             break;
             
         default:
             break;
     }
-    _viewAnimator.frame = self.view.bounds;
 }
 
 #pragma mark - 懒加载

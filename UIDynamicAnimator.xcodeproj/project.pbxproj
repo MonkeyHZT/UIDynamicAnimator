@@ -23,6 +23,9 @@
 		35A2ABA81E8BA8A700885E05 /* AttachmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A2ABA71E8BA8A700885E05 /* AttachmentView.m */; };
 		35A2ABAB1E8BA8B100885E05 /* SpringView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A2ABAA1E8BA8B100885E05 /* SpringView.m */; };
 		35A2ABAE1E8BA8C200885E05 /* ColideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A2ABAD1E8BA8C200885E05 /* ColideView.m */; };
+		35A2ABB21E8CAAA600885E05 /* UIView+SetOrigin.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A2ABB11E8CAAA600885E05 /* UIView+SetOrigin.m */; };
+		35A2ABB51E8CAB2100885E05 /* CALayer+SetOrigin.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A2ABB41E8CAB2100885E05 /* CALayer+SetOrigin.m */; };
+		35A2ABB81E8CCC0900885E05 /* RoundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A2ABB71E8CCC0900885E05 /* RoundLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +79,12 @@
 		35A2ABAA1E8BA8B100885E05 /* SpringView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringView.m; sourceTree = "<group>"; };
 		35A2ABAC1E8BA8C200885E05 /* ColideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColideView.h; sourceTree = "<group>"; };
 		35A2ABAD1E8BA8C200885E05 /* ColideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColideView.m; sourceTree = "<group>"; };
+		35A2ABB01E8CAAA600885E05 /* UIView+SetOrigin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SetOrigin.h"; sourceTree = "<group>"; };
+		35A2ABB11E8CAAA600885E05 /* UIView+SetOrigin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SetOrigin.m"; sourceTree = "<group>"; };
+		35A2ABB31E8CAB2100885E05 /* CALayer+SetOrigin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+SetOrigin.h"; sourceTree = "<group>"; };
+		35A2ABB41E8CAB2100885E05 /* CALayer+SetOrigin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+SetOrigin.m"; sourceTree = "<group>"; };
+		35A2ABB61E8CCC0900885E05 /* RoundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundLayer.h; sourceTree = "<group>"; };
+		35A2ABB71E8CCC0900885E05 /* RoundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +139,7 @@
 				35A2AB8C1E8B88C300885E05 /* Controllers */,
 				35A2AB901E8B8A2E00885E05 /* DataSource */,
 				35A2AB911E8B8A2E00885E05 /* Delegate */,
+				35A2ABAF1E8CAA8000885E05 /* Others */,
 				35A2AB5B1E8B883F00885E05 /* AppDelegate.h */,
 				35A2AB5C1E8B883F00885E05 /* AppDelegate.m */,
 				35A2AB641E8B883F00885E05 /* Assets.xcassets */,
@@ -212,6 +222,19 @@
 				35A2ABAD1E8BA8C200885E05 /* ColideView.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		35A2ABAF1E8CAA8000885E05 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				35A2ABB01E8CAAA600885E05 /* UIView+SetOrigin.h */,
+				35A2ABB11E8CAAA600885E05 /* UIView+SetOrigin.m */,
+				35A2ABB31E8CAB2100885E05 /* CALayer+SetOrigin.h */,
+				35A2ABB41E8CAB2100885E05 /* CALayer+SetOrigin.m */,
+				35A2ABB61E8CCC0900885E05 /* RoundLayer.h */,
+				35A2ABB71E8CCC0900885E05 /* RoundLayer.m */,
+			);
+			path = Others;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,14 +370,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35A2ABB51E8CAB2100885E05 /* CALayer+SetOrigin.m in Sources */,
 				35A2ABA51E8BA89700885E05 /* PushView.m in Sources */,
 				35A2AB951E8B8A4000885E05 /* MainDemoListDataSource.m in Sources */,
 				35A2AB8F1E8B88D200885E05 /* MainDemoListController.m in Sources */,
 				35A2ABA21E8BA87800885E05 /* SnapView.m in Sources */,
 				35A2AB9F1E8BA2B300885E05 /* BaseView.m in Sources */,
 				35A2ABA81E8BA8A700885E05 /* AttachmentView.m in Sources */,
+				35A2ABB21E8CAAA600885E05 /* UIView+SetOrigin.m in Sources */,
 				35A2AB5D1E8B883F00885E05 /* AppDelegate.m in Sources */,
 				35A2ABAB1E8BA8B100885E05 /* SpringView.m in Sources */,
+				35A2ABB81E8CCC0900885E05 /* RoundLayer.m in Sources */,
 				35A2AB981E8B8A5500885E05 /* MainDemoListDelegate.m in Sources */,
 				35A2AB5A1E8B883F00885E05 /* main.m in Sources */,
 				35A2ABAE1E8BA8C200885E05 /* ColideView.m in Sources */,

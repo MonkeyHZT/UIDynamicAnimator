@@ -14,4 +14,7 @@
 
 @property (nonatomic,strong)UIDynamicAnimator *animator;
 
+//子类实现
+- (void)initAction;
+
 @end

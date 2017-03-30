@@ -13,17 +13,29 @@
 
 @implementation BaseView
 
--(instancetype)init{
-    if(self = [super init]){
+-(instancetype)initWithFrame:(CGRect)frame{
+    if(self = [super initWithFrame:frame]){
         self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background"]];
         [self addSubview:self.viewBox];
+        [self initCollisionBehavior];
         [self initAction];
     }
     return self;
 }
-
 - (void)initAction{
+    
 }
+- (void)initCollisionBehavior{
+    //边缘检测
+    UICollisionBehavior * collision = [[UICollisionBehavior alloc] initWithItems:@[self.viewBox]];
+    collision.translatesReferenceBoundsIntoBoundary = YES;
+//    collision.collisionDelegate = self;
+//    collision.collisionMode = UICollisionBehaviorModeBoundaries;
+    [self.animator addBehavior:collision];
+}
+//- (void)collisionBehavior:(UICollisionBehavior *)behavior beganContactForItem:(id<UIDynamicItem>)item withBoundaryIdentifier:(id<NSCopying>)identifier atPoint:(CGPoint)p{
+//    NSLog(@"好疼，我撞在%f,%f，%@",p.x,p.y,identifier);
+//}
 
 
 #pragma mark - 懒加载

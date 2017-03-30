@@ -11,3 +11,10 @@
 @interface ColideView : BaseView
 
 @end
+
+@interface LineModel : NSObject
+
+@property (nonatomic,assign)CGPoint pointStart;
+@property (nonatomic,assign)CGPoint pointEnd;
+
+@end

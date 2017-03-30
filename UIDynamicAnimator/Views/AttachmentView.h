@@ -10,4 +10,6 @@
 
 @interface AttachmentView : BaseView
 
+@property (nonatomic,readonly)UIAttachmentBehavior *attachmentBehavior;//附着行为
+
 @end
