@@ -309,11 +309,13 @@
 					};
 					35A2AB6D1E8B883F00885E05 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = ZH6L37455T;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 35A2AB541E8B883F00885E05;
 					};
 					35A2AB781E8B883F00885E05 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = ZH6L37455T;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 35A2AB541E8B883F00885E05;
 					};
@@ -553,6 +555,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = ZH6L37455T;
 				INFOPLIST_FILE = UIDynamicAnimatorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.HZT.UIDynamicAnimatorTests;
@@ -565,6 +568,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = ZH6L37455T;
 				INFOPLIST_FILE = UIDynamicAnimatorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.HZT.UIDynamicAnimatorTests;
@@ -576,6 +580,7 @@
 		35A2AB891E8B883F00885E05 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = ZH6L37455T;
 				INFOPLIST_FILE = UIDynamicAnimatorUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.HZT.UIDynamicAnimatorUITests;
@@ -587,6 +592,7 @@
 		35A2AB8A1E8B883F00885E05 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = ZH6L37455T;
 				INFOPLIST_FILE = UIDynamicAnimatorUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.HZT.UIDynamicAnimatorUITests;

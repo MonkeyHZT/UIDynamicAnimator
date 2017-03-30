@@ -16,6 +16,7 @@
 @property (nonatomic,strong)LineModel *lineModel;
 @property (nonatomic,strong)UIGravityBehavior *gravityBehavior;//重力
 @property (nonatomic,strong)UICollisionBehavior *collisionBehavior;//边缘检测
+@property (nonatomic,strong)UIDynamicItemBehavior *itemBehavior;//属性行为
 
 @end
 
@@ -55,9 +56,9 @@
 //    [self.animator addBehavior:collision];
     
     // 4.物体的属性行为
-    UIDynamicItemBehavior *item = [[UIDynamicItemBehavior alloc] initWithItems:@[self.viewBox]];
-    item.elasticity = 1.0;
-    [self.animator addBehavior:item];
+//    UIDynamicItemBehavior *item = [[UIDynamicItemBehavior alloc] initWithItems:@[self.viewBox]];
+//    item.elasticity = 1.0;
+//    [self.animator addBehavior:item];
 
     
     
@@ -109,24 +110,41 @@
 #pragma mark - 按钮事件
 
 - (void)btnResetAction:(UIButton *)sender{
+//    self.gravityBehavior = nil;
+    
+    //物理对象等
+    [self.animator removeBehavior:self.gravityBehavior];
+    [self.animator removeBehavior:self.collisionBehavior];
+    [self.animator removeBehavior:self.itemBehavior];
+    
+    self.gravityBehavior = [[UIGravityBehavior alloc] initWithItems:@[self.viewBox]];
+    
+    self.itemBehavior = [[UIDynamicItemBehavior alloc] initWithItems:@[self.viewBox]];
+    self.itemBehavior.elasticity = 1.0;
+    
+    self.collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.viewBox]];
+    self.collisionBehavior.collisionDelegate = self;
+    self.collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
+    
+    [self.collisionBehavior removeAllBoundaries];
+    
     [self.arrPaths removeAllObjects];
     self.viewBox.center = CGPointMake(self.center.x, 50);
     [self setNeedsDisplay];
     
     
     
-    //物理对象等
-    [self.animator removeBehavior:self.gravityBehavior];
-    [self.collisionBehavior removeAllBoundaries];
 }
 
 - (void)btnStartAction:(UIButton *)sender{
     
     [self.animator addBehavior:self.gravityBehavior];
+    [self.animator addBehavior:self.collisionBehavior];
+    [self.animator addBehavior:self.itemBehavior];
     
 //    [collision addBoundaryWithIdentifier:@"ddd" fromPoint:CGPointMake(0, 300) toPoint:CGPointMake(180, 300)];
     [self.arrPaths enumerateObjectsUsingBlock:^(LineModel  *lineModel, NSUInteger idx, BOOL * _Nonnull stop) {
-        
+        [self.collisionBehavior addBoundaryWithIdentifier:@"" fromPoint:lineModel.pointStart toPoint:lineModel.pointEnd];
     }];
 }
 
@@ -142,6 +160,7 @@
         _btnReset.backgroundColor = [UIColor grayColor];
         _btnReset.frame = CGRectMake(20, 30, 60, 30);
         [_btnReset addTarget:self action:@selector(btnResetAction:) forControlEvents:UIControlEventTouchUpInside];
+//        _btnReset.hidden  = YES;
     }
     return _btnReset;
 }
