@@ -25,6 +25,7 @@
 -(UIGravityBehavior *)gravityBehavior{
     if(!_gravityBehavior){
         _gravityBehavior = [[UIGravityBehavior alloc] initWithItems:@[self.viewBox]];
+//        _gravityBehavior.gravityDirection = CGVectorMake(0, -1);//控制重力方向
     }
     return _gravityBehavior;
 }
@@ -34,41 +35,17 @@
     [self addSubview:self.btnStart];
     UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panAction:)];
     [self addGestureRecognizer:panGesture];
-    
-    // 2. 添加重力行为
-//    UIGravityBehavior * gravity = [[UIGravityBehavior alloc] initWithItems:@[self.viewBox]];
-//    // 2.1 添加
-//    [self.animator addBehavior:gravity];
-    
-    // 3. 设置边缘检测
-    [self.animator addBehavior:self.collisionBehavior];
-//    UICollisionBehavior * collision = [[UICollisionBehavior alloc] initWithItems:@[self.box]];
-//    
-//    // 设置代理
-//    collision.collisionDelegate = self;
-//    
-//    collision.translatesReferenceBoundsIntoBoundary = YES;
-//    
-//    // 3.1 添加边缘
-//    [collision addBoundaryWithIdentifier:@"ddd" fromPoint:CGPointMake(0, 300) toPoint:CGPointMake(180, 300)];
-//    
-//    // 3.1 添加
-//    [self.animator addBehavior:collision];
-    
-    // 4.物体的属性行为
-//    UIDynamicItemBehavior *item = [[UIDynamicItemBehavior alloc] initWithItems:@[self.viewBox]];
-//    item.elasticity = 1.0;
-//    [self.animator addBehavior:item];
-
-    
-    
 }
 
 - (void)panAction:(UIPanGestureRecognizer *)panGesture{
+    
     CGPoint touchPoint = [panGesture locationInView:self];
     switch (panGesture.state) {
         case UIGestureRecognizerStateBegan:
         {
+            if(self.animator.behaviors.count > 0){
+                [self btnResetAction:self.btnReset];
+            }
             self.lineModel = [[LineModel alloc] init];
             [self.arrPaths addObject:self.lineModel];
             self.lineModel.pointStart = touchPoint;
@@ -110,29 +87,16 @@
 #pragma mark - 按钮事件
 
 - (void)btnResetAction:(UIButton *)sender{
-//    self.gravityBehavior = nil;
-    
     //物理对象等
-    [self.animator removeBehavior:self.gravityBehavior];
-    [self.animator removeBehavior:self.collisionBehavior];
-    [self.animator removeBehavior:self.itemBehavior];
-    
-    self.gravityBehavior = [[UIGravityBehavior alloc] initWithItems:@[self.viewBox]];
-    
-    self.itemBehavior = [[UIDynamicItemBehavior alloc] initWithItems:@[self.viewBox]];
-    self.itemBehavior.elasticity = 1.0;
-    
-    self.collisionBehavior = [[UICollisionBehavior alloc] initWithItems:@[self.viewBox]];
-    self.collisionBehavior.collisionDelegate = self;
-    self.collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
+    [self.animator removeAllBehaviors];
     
     [self.collisionBehavior removeAllBoundaries];
     
     [self.arrPaths removeAllObjects];
     self.viewBox.center = CGPointMake(self.center.x, 50);
+//    self.viewBox.center = self.center;
+    self.viewBox.transform = CGAffineTransformIdentity;
     [self setNeedsDisplay];
-    
-    
     
 }
 
@@ -142,9 +106,8 @@
     [self.animator addBehavior:self.collisionBehavior];
     [self.animator addBehavior:self.itemBehavior];
     
-//    [collision addBoundaryWithIdentifier:@"ddd" fromPoint:CGPointMake(0, 300) toPoint:CGPointMake(180, 300)];
     [self.arrPaths enumerateObjectsUsingBlock:^(LineModel  *lineModel, NSUInteger idx, BOOL * _Nonnull stop) {
-        [self.collisionBehavior addBoundaryWithIdentifier:@"" fromPoint:lineModel.pointStart toPoint:lineModel.pointEnd];
+        [self.collisionBehavior addBoundaryWithIdentifier:@"hzt" fromPoint:lineModel.pointStart toPoint:lineModel.pointEnd];
     }];
 }
 
@@ -160,7 +123,6 @@
         _btnReset.backgroundColor = [UIColor grayColor];
         _btnReset.frame = CGRectMake(20, 30, 60, 30);
         [_btnReset addTarget:self action:@selector(btnResetAction:) forControlEvents:UIControlEventTouchUpInside];
-//        _btnReset.hidden  = YES;
     }
     return _btnReset;
 }
@@ -191,6 +153,14 @@
         _collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
     }
     return _collisionBehavior;
+}
+
+-(UIDynamicItemBehavior *)itemBehavior{
+    if(!_itemBehavior){
+        _itemBehavior = [[UIDynamicItemBehavior alloc] initWithItems:@[self.viewBox]];
+        _itemBehavior.elasticity = 0.75f;
+    }
+    return _itemBehavior;
 }
 
 @end
